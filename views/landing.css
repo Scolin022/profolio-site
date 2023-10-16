@@ -23,6 +23,7 @@ body, html {
 h1 {
     font-size: 4em;
     margin-bottom: 0.5em;
+    font-family: 'Monofett', monospace;
 }
 
 h2 {
