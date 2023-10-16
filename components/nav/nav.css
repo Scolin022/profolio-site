@@ -1,16 +1,15 @@
-/* Navigation Bar Styles */
 nav {
-    background-color: #272727;
+    background-color: #131313;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: .7rem 5%;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem;
 }
 
 nav ul {
@@ -37,7 +36,6 @@ nav ul li {
     margin: 3px 0;
 }
 
-/* Mobile Responsive Design */
 @media screen and (max-width: 768px) {
     .hamburger-menu {
         display: flex;
