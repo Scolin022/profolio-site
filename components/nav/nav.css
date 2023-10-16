@@ -24,7 +24,7 @@ nav ul li {
     font-size: 1.23rem;
 }
 
-/* Hamburger Menu for Mobile */
+/* Hamburger Menu */
 .hamburger-menu {
     display: none;
     flex-direction: column;

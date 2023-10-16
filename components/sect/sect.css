@@ -41,8 +41,8 @@ h1 {
 }
 
 .project-image {
-    height: 22em;
-    background-color: #555;
+    height: 450px;
+    background-image:url('../../images/jpg/dummy-img1.jpg');
     margin-bottom: 3em;
 }
 
@@ -57,7 +57,8 @@ h1 {
 .tags {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 .tags span {
@@ -84,21 +85,18 @@ button:hover {
     background-color: #666;
 }
 
-
-/* Stacking the columns when the screen size is below 800px */
 @media (max-width: 850px) {
     .projects-container {
         flex-direction: column;
-        gap: 40px; /* Adding more space between stacked projects for clarity */
+        gap: 40px;
     }
 
     .project {
-        width: 80%; /* Making the project take the full width on smaller screens */
+        width: 100%;
         align-self: center;
     }
 }
 
-/* Adjusting button size for even smaller screens */
 @media (max-width: 500px) {
     button {
         padding: 8px 15px;
