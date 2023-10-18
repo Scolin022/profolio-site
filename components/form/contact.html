@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Speak with an Expert</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="path_to_your_logo.png" alt="Your Logo" class="logo">
+            <a href="#" class="signup-btn">Sign up</a>
+        </header>
+        <h1>Speak with an Expert</h1>
+        <p>Our team can help you:</p>
+        <ul>
+            <li>Demo products of interest.</li>
+            <li>Design a solution to accept and optimize payments, add new revenue streams, and automate financial workflows.</li>
+            <li>Access custom pricing including cost+ pricing, volume discounts, and more.</li>
+            <li>Get started on Stripe faster with dedicated implementation and support services.</li>
+        </ul>
+        <form action="/submit" method="POST">
+            <div class="input-group">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+
+            <!-- You can continue similarly for the other fields -->
+
+            <div class="input-group">
+                <label for="message">Anything else?</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
