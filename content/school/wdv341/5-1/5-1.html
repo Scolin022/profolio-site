@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV101 Intro HTML and CSS</title>
+
+<style>
+
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+  }
+
+  h1, h2 {
+      color: #333;
+  }
+
+  form {
+      width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  form legend {
+      font-size: 1.5em;
+      color: #333;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+  }
+
+  label {
+      margin-bottom: 8px;
+      color: #555;
+  }
+
+  input[type="text"], 
+  input[type="email"], 
+  textarea, 
+  select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 1em;
+  }
+
+  input[type="radio"], 
+  input[type="checkbox"] {
+      margin-right: 10px;
+  }
+
+  p > input[type="submit"], 
+  p > input[type="reset"] {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  p > input[type="reset"] {
+      background-color: #e74c3c;
+      margin-left: 10px;
+  }
+
+  p > input[type="submit"]:hover {
+      background-color: #2980b9;
+  }
+
+  p > input[type="reset"]:hover {
+      background-color: #c0392b;
+  }
+	
+</style>
+
+</head>
+
+<body>
+<h1>WDV101 Intro HTML and CSS</h1>
+<h2>UNIT 5 - Lesson 2 Server Side Forms</h2>
+<p>This is an example input form that will demonstrate how a form connects to a server side process.</p>
+<form id="form1" name="form1" method="post" action="formHandler.php">
+
+  <legend>Example Form</legend>
+  
+  <p>
+  	<label for="first_name">First Name:</label> 
+    <input type="text" name="first_name" id="first_name" />
+  </p>
+  
+  <p>
+  	<label for="last_name">Last Name:</label> 
+    <input type="text" name="last_name" id="last_name" />
+  </p>
+  
+  <p>
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email">
+  </p>
+
+  <p>
+  	<label for="school_name">School Name:</label> 
+    <input type="text" name="school_name" id="school_name" />
+  </p>
+
+  <p>
+    <label for="selected_major">Field of study:</label>
+    <select name="selected_major" id="selected_major">
+      <option value="you are not in anything currently" selected>None</option>
+      <option value="Computer Information Systems">Computer Information Systems</option>
+      <option value="Graphic Design">Graphic Design</option>
+      <option value="Web Development">Web Development</option>
+    </select>
+  </p>
+
+  <p>
+    <p>Please select your current academic standing:</p>
+    <input type="radio" id="high_school" name="academic_standing" value="high school student">
+    <label for="high_school">High School</label><br>
+    <input type="radio" id="Freshman" name="academic_standing" value="freshman">
+    <label for="freshman">Freshman</label><br>
+    <input type="radio" id="sophomore" name="academic_standing" value="sophomore">
+    <label for="sophomore">Sophomore</label>
+  </p>
+
+  <p>
+    <p>Contact Preferences</p>
+    <input type="checkbox" id="contact_user" name="contact_user" value="Receiving program information.">
+    <label for="contact_user">Please contact me with program information.</label><br>
+    <input type="checkbox" id="user_will_contact" name="user_will_contact" value="Contacting a program advisor.">
+    <label for="user_will_contact">I would like to contact an program advisor</label><br>
+  </p>
+
+  <p>
+    <p><label for="additional_comments">Any Needed Addional Information:</label></p>
+    <textarea id="additional_comments" name="additional_comments" rows="4" cols="50"></textarea>
+  </p>
+
+  <p>
+    <input type="submit" name="button" id="button" value="Submit" />
+    <input type="reset" name="button2" id="button2" value="Reset" />
+  </p>
+  
+</form>
+
+<p>&nbsp;</p>
+</body>
+
+</html>
