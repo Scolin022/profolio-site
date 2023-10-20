@@ -1,0 +1,102 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDV321 Advanced JavaScript - Unit-1</title>
+    <style>
+        body {
+            background-color: green;
+        }
+
+        #container {
+            width:900px;
+            margin-left:auto;
+            margin-right:auto;
+            padding: 30px;
+            background-color: antiquewhite;
+
+        }
+
+        header {
+            border-bottom:thick solid brown;
+            text-align: center;
+        }
+
+        main {
+            padding-left:5px;
+        }
+
+        footer p {
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>WDV321 Advanced JavaScript</h1>
+            <h2>Unit-1 Assignment Review JavaScript</h2>
+        </header>
+        <main>
+            <h2>Welcome back NAME</h2>
+
+            <h3>Please Set Your Preferences</h3>
+            <select id="colorsDropdown" onchange="colorChange()"></select>
+            <p id="onchange"></p>
+
+            <button onclick="displayPreferences()">Display Preferences</button>
+            <p id="data"></p>
+        </main>
+        <footer>
+            <p>Copyright &copy;DATE Samantha Colin. All Rights Reserved.</p>
+        </footer>
+        <script>
+            const person = {
+                userName: "Mary",
+                fontColor: "Black",
+                bgColor: "green"
+            };
+            
+            const date = new Date();
+            const currentYear = date.getFullYear();
+            const colors = ["red", "blue", "green", "yellow", "orange", "white"];
+            const backgroundColor = person.bgColor;
+
+            document.body.innerHTML = document.body.innerHTML.replace('DATE', currentYear);
+            document.querySelector("main h2").textContent = `Welcome back ${person.userName}`;
+            
+            const dropdown = document.getElementById("colorsDropdown");
+            for (let i = 0; i < colors.length; i++) {
+                let option = document.createElement("option");
+                option.text = colors[i];
+                option.value = colors[i];
+                dropdown.appendChild(option);
+            }
+
+            function colorChange() {
+                document.getElementById("onchange").innerHTML = ""; // Reset
+                const selectedValue = dropdown.value;
+                person.bgColor = selectedValue;
+                
+                if (selectedValue === backgroundColor) {
+                    document.getElementById("onchange").innerHTML = "This page is already that color.<br /> Please try again.";
+                }
+            
+                changeBackgroundColor(selectedValue);
+            }
+            
+            function changeBackgroundColor(color) {
+                document.body.style.backgroundColor = color;
+            }
+
+            function displayPreferences() {
+                document.getElementById('data').innerText = JSON.stringify(person, null, 2);
+            }
+            
+        </script>
+    </div>
+</body>
+</html>

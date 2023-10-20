@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>WDV321 Advanced Javascript</title>\
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+			color: #333;
+		}
+
+		h1, h2 {
+			text-align: center;
+			padding: 20px;
+		}
+
+		h1 {
+			background-color: #4e4d4dea;
+			color: #fff;
+			margin: 0;
+		}
+
+		h2 {
+			background-color: #333;
+			color: #fff;
+		}
+
+		div {
+			max-width: 600px;
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #e7e7e7;
+			margin: 20px auto;
+			box-shadow: 0 0 30px rgba(0,0,0,0.05);
+		}
+
+		select, input[type="submit"], input[type="checkbox"], input[type="radio"] {
+			margin-top: 10px;
+			padding: 15px;
+		}
+
+		input[type="submit"] {
+			background-color: #8b8b8b;
+			display: block;
+			color: #fff;
+			border: none;
+			padding: 15px 15px;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #383838;
+		}
+	</style>
+</head>
+<body>
+	<!-- I know I did not use the display property but I found this super cool way of dynamically displaying boxes on a page using jQuery I really wanted to try out. I hope that's okay.
+	Thanks! -->
+
+    <h1>WDV321 Advanced Javascript</h1>
+    <h2>Dynamic Structure - Assignment</h2><br><br>
+
+	<div>
+		<label>What best describes the reason you are contacting us today?<br><br>
+	      <select>
+			<option value="default">Choose an Option</option>
+			<option value="C">Complaint</option>
+			<option value="T">Technical Problems</option>
+			<option value="V">Product Issues</option>
+		  </select>
+		</label>
+	</div><br>
+
+	<div class="C box">
+		<label for="issue_type">Please choose an option that best describes your issue:<br><br>
+		  <select name="issue_type" id="issue_type">
+			<option value="default">Select an Option</option>
+			<option value="Product/Service">Product or Service</option>
+			<option value="Billing/Payment">Billing and Payment</option>
+			<option value="Customer/Service">Customer Service Interaction</option>
+			<option value="Delivery/Shipping">Delivery or Shipping</option><br><br>
+			<input type="submit" value="Submit">
+		  </select>
+		</label>
+	</div>
+
+	<div class="T box">
+		<label for="issue_type">Which technical area you are having problems with?<br><br>
+			<input type="checkbox" id="tech_issue1" name="tech_issue1" value="Software or Hardware">
+			<label for="vehicle1"> Software or Hardware Issues</label><br>
+			<input type="checkbox" id="tech_issue2" name="tech_issue2" value="Connectivity and Network">
+			<label for="vehicle2"> Connectivity and Network Issues</label><br>
+			<input type="checkbox" id="tech_issue3" name="tech_issue3" value="Usability and Interface">
+			<label for="vehicle3"> Usability and Interface Issues</label><br>
+			<input type="checkbox" id="tech_issue4" name="tech_issue4" value="Billing and Account">
+			<label for="vehicle3"> Billing and Account Management</label><br><br>
+			<input type="submit" value="Submit">
+		</label>
+	</div>
+
+	<div class="V box">
+		<label for="issue_type">Choose the option that best describes your product issue:<br><br>
+			<input type="radio" id="billing/payment" name="product_issue" value="Billing and Payment">
+			<label for="billing/payment">Billing and Payment Issue</label><br>
+			<input type="radio" id="product/service" name="product_issue" value="Product or Service">
+			<label for="product/service">Product or Service Issue</label><br>
+			<input type="radio" id="customer_service_interaction" name="product_issue" value="Customer Service Interaction">
+			<label for="customer_service_interaction">Customer Service Interaction</label><br>
+			<input type="radio" id="delivery/shipping" name="product_issue" value="Delivery or Shipping Issue">
+			<label for="delivery/shipping">Delivery or Shipping Issue</label><br><br>
+			<input type="submit" value="Submit">
+		</label>
+	</div>
+<!--<p>Create the content areas on the page.</p>
+	<ol>
+	  <li>Create a div that contains a new drop down list with at least four common Complaints to a company. </li>
+	  <li>Create a div that contains four Technical Problems displayed as a  set of checkboxes. </li>
+	  <li>Create a div that contains four Product Issues displayed as a set of radio buttons.</li>
+	  <li>Use the display property to remove these content containers from the page.</li>
+    </ol>
+	<p>Based on the selection from the &quot;Reason For Contact&quot; dynamically display the requested set of followup questions on the page using the display property.</p>
+	<p>You are welcome to change the content, layout and style of this page as desired. </p>
+	<p>&nbsp;</p> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+</body>
+</html>

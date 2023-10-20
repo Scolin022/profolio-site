@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Open Inspect to See Console Log of JSON Objects</h1>
+<script>
+    const jsJavaBook ={
+        ISBN: '0-596-00016-2',
+		Title: 'Java and XML',
+		Price: '39.95',
+		Publisher: "O'Reilly &amp; Associates",
+		Author: { Fname: 'Brett', Lname: 'McLaughlin' },
+		Copyright: '2000'
+    };
+
+    const jsVB6Book ={
+        ISBN: '1-861003-32-3',
+		Title: 'Professional Visual Basic 6 XML',
+		Price: '49.99',
+		Publisher: "Wrox Press",
+		Author1: { Fname: 'James', Lname: 'Britt' },
+        Author2: { Fname: 'Tuen', Lname: 'Duynstee'},
+		Copyright: '2000'
+    };
+
+    const textbooks = {
+        book1: jsJavaBook, 
+        book2: jsVB6Book
+    };
+
+    const JavaBookJSON = JSON.stringify(jsJavaBook);
+    const VB6Book = JSON.stringify(jsJavaBook);
+    const textbooksJSON = JSON.stringify({JavaBookJSON, VB6Book});
+
+    console.log(textbooksJSON);
+</script>
+</body>
+</html>

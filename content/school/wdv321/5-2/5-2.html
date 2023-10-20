@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Basic reset for consistent rendering across browsers */
+        body, h1, input {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        input[type="button"] {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<script>
+    function getCookieVal (offset) {
+    var endstr = document.cookie.indexOf (";", offset);
+    if (endstr == -1)
+    endstr = document.cookie.length;
+    return unescape(document.cookie.substring(offset, endstr));
+    }
+    function GetCookie (name) {
+        let arg = name + "=";
+        let alen = arg.length;
+        let clen = document.cookie.length;
+        let i = 0;
+        while (i < clen) {
+            let j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return getCookieVal (j);
+                i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0) 
+                break; 
+    }
+    return null;
+    }
+    function SetCookie (name, value) {
+        let argv = SetCookie.arguments;
+        let argc = SetCookie.arguments.length;
+        let expires = (2 < argc) ? argv[2] : null;
+        let path = (3 < argc) ? argv[3] : null;
+        let domain = (4 < argc) ? argv[4] : null;
+        let secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name + "=" + escape (value) +
+        ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+        ((path == null) ? "" : ("; path=" + path)) +
+        ((domain == null) ? "" : ("; domain=" + domain)) +
+        ((secure == true) ? "; secure" : "");
+    }
+    function DisplayInfo() {
+        let expdate = new Date();
+        let visit;
+        expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365)); 
+        if(!(visit = GetCookie("visit"))) 
+            visit = 0;
+            visit++;
+            SetCookie("visit", visit, expdate, "/", null, false);
+        let message;
+        alert("\n"+"Your browser has visited this page               \n"
+                    +""+visit+"" +" time(s)."+"\n"+"\n");
+        }
+        function ResetCounts() {
+        let expdate = new Date();
+        expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365)); 
+        visit = 0;
+        SetCookie("visit", visit, expdate , "/", null, false);
+        history.go(0);
+    }
+
+    window.onload=DisplayInfo
+    </script>
+</head>
+<br>
+    <h1>Number of Visits Tracker</h1>
+    <h2>With JavaScript</h2>
+</br>
+    <input name="update" type="button" value="Revisit Page" OnClick="history.go(0)">
+    <input name="reset" type="button" value="Reset Counter" OnClick="ResetCounts()">
+</body>
+</html>
