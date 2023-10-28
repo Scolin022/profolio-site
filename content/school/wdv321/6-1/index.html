@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+
+    <h1>Account Setup</h1>
+    <h2>We just need some infomation from you to set up your account,</h2>
+
+    <form id="userInfoForm">
+        <div>
+            <label for="first_name">Your Name:</label>
+        </div>
+        <div>
+            <input type="text" id="first_name" name="firstName" placeholder="John" required>
+        </div>
+        <div>
+            <label for="last_name">Last Name:</label>
+        </div>
+        <div>
+            <input type="text" id="last_name" name="lastName" placeholder="Doe" required>
+        </div>
+        <div>
+            <label for="contact_method">Preferred Communication Method</label>
+        </div>
+        <div>
+            <select id="contact_methods" name="prefContactMethod">
+                <option value="placeholder">Select</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+            </select>
+        </div>
+        <div>
+            <label for="email">Email Address</label>
+        </div>
+        <div>
+            <input type="email" id="email" name="Email" placeholder="example@domain.com">
+        </div>
+        <div>
+            <label for="phone">Phone Number</label>
+        </div>
+        <div>
+            <input type="tel" id="phone" name="Phone" placeholder="(555) 555-5555">
+        </div>
+        <div>
+            <button type="submit">Save Profile</button>
+        </div>   
+    </form>
+    <script src="localStorage.js"></script>
+</body>
+
+</html>
