@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.tailwindcss.com/3.0.0/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-container {
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('https://placehold.co/1024x422/forest-background-alt-text');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <!-- Navbar -->
+        <nav class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-4">
+            <a href="#" class="text-white text-xl font-semibold">airbnb</a>
+            <div class="space-x-4">
+                <a href="#" class="text-white">Places to stay</a>
+                <a href="#" class="text-white">Experiences</a>
+                <a href="#" class="text-white">Online Experiences</a>
+                <a href="#" class="text-white">Become a host</a>
+                <button class="text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Search Container -->
+        <div class="search-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 bg-white rounded-lg shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <div class="flex space-x-4">
+                    <input type="text" placeholder="Where are you going?" class="w-full p-2 border rounded">
+                    <input type="text" onfocus="(this.type='date')" placeholder="Check in" class="w-full p-2 border rounded">
+                    <input type="text" onfocus="(this.type='date')" placeholder="Check out" class="w-full p-2 border rounded">
+                    <input type="text" placeholder="Add guests" class="w-full p-2 border rounded">
+                    <button class="p-2 bg-red-500 text-white rounded">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="text-center">
+                    <p class="text-lg">Not sure where to go? Perfect.</p>
+                    <button class="mt-4 px-6 py-2 bg-black text-white rounded-full">I'm flexible</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

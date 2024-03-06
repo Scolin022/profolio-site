@@ -2,91 +2,303 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Colin</title>
-    <link rel="stylesheet" href="root/reset.css">
-    <link rel="stylesheet" href="root/global.css">
-    <link rel="stylesheet" href="root/fonts.css">
-    <link rel="stylesheet" href="components/nav/nav.css">
-    <link rel="stylesheet" href="components/footer/footer.css">
-    <link rel="stylesheet" href="views/landing.css">
+    <title>Responsive Design Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <style>
+      .header-3 { font-size: 2.25rem; line-height: 2.5rem; }
+        .body-text { font-size: 1rem; line-height: 1.5rem; }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-container img {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .image-container:hover img {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        .image-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .image-container:hover .image-icons {
+            opacity: 1;
+        }
+        .icon {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+        }
+        .icon i {
+            color: white;
+        }
+        .cta-button {
+            display: inline-block;
+            text-align: center;
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
+       
+       
+       
+        .parallax {
+            background-image: url('https://placehold.co/1626x768');
+            background-image: url('/images/background.webp');
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+        .profile-picture {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-color: #dd6b20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 3.6rem;
+        }
+              .profile-picture img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
 
-    <script src="components/nav/nav.js" defer></script>
-
-    <!-- Favicon -->
-    <!-- <link rel="icon" href="path/to/your/favicon.ico"> -->
-
-    <!-- SEO and Open Graph Meta Tags -->
-    <!--
-    <meta name="description" content="A brief description of your website.">
-    <meta property="og:title" content="Your Website Title">
-    <meta property="og:description" content="A brief description of your website.">
-    <meta property="og:image" content="path/to/your/og-image.jpg">
-    -->
+        @media (min-width: 640px) {
+            .profile-picture {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        @media (min-width: 768px) {
+            .profile-picture {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <span class="icon"><img src="../images/icon/logo.svg" alt="Full Stack"></span>
-            <ul class="nav-list">
-                <li><a href="content/personal/projects.html">Projects</a></li>
-                <li><a href="#">Resume</a></li>
-            </ul>
-            <div class="hamburger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
+      <div class="flex justify-between items-center py-2">
+      <!-- <div class="text-xs">
+        Latest on our blog: <a href="#" class="underline bg-[#E5A5F5] text-white">How to support a remote team?</a> Taking care of the mental health of your development team
+      </div> -->
+      <div class="flex items-right">
+        <!-- <a href="#" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a> -->
+        <!-- <a href="#" class="mx-2"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="mx-2"><i class="fab fa-github"></i></a> -->
+        <!-- <a href="#" class="mx-2"><i class="fab fa-behance"></i></a> -->
+        <!-- <a href="#" class="mx-2">
+          <i class="fas fa-globe-europe"></i>
+        </a> -->
+      </div>
+    </div>
+     <nav class="flex items-center justify-between flex-wrap bg-[#1F2937] p-6">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-semibold text-xl tracking-tight">samswebprofile</span>
+      </div>
+      <div class="block lg:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-md lg:flex-grow">
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Home
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Projects
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Skills
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            About Me
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Contact
+          </a>
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+            Blog
+          </a>
+        </div>
+        <div>
+          <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-200 border-teal-200 hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">VIEW RESUME</a>
+        </div>
+      </div>
+    </nav>
+  
+  
+  
+  
+<body class="bg-gray-800 text-white font-sans">
+    <div class="parallax">
+        <h1 class="text-4xl font-bold">SAM COLIN</h1>
+        <p class="text-xl">SOFTWARE ENGINEER</p>
+        <div class="profile-picture">
+            <img src="/images/profile.webp" alt="Sam Colin">
+        </div>
+        <p>I'm a full stack software engineer located in the United States.</p>
+        <div class="social-icons">
+            <a href="https://github.com" target=”_blank><i class="fab opacity-85 text-white fa-github"></i></a>
+            <a href="https://twitter.com" target=”_blank><i class="fab opacity-85 text-white fa-twitter"></i></a>
+            <a href="https://linkedin.com" target=”_blank><i class="fab opacity-85 text-white fa-linkedin"></i></a>
+        </div>
+    </div>
+    <div class="container mx-auto px-4">
+        <div class="text-center py-10">
+            <div class="header-3 font-bold my-2">Some of My Work...</div>
+            <p class="body-text mx-auto leading-relaxed max-w-lg">Project Concept Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+
+        <div class="flex flex-between -mx-2 mb-8">
+            <div class="w-full sm:w-1/2 md:w-1/2 px-2 mb-6 image-container">
+                <img class="w-full h-auto" src="https://placehold.co/600x360" alt="Placeholder image with interaction effects on hover.">
+                <div class="image-icons">
+                    <a href="https://github.com" target=”_blank class="icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fas fa-eye"></i></a>
+                </div>
+                <a href="#" class="cta-button">View Live</a>
             </div>
-        </nav>
-    </header>
-    <div class="background-pattern">
-        <div class="content-wrapper">
-            <h1>SAM COLIN</h1>
-            <h2>SOFTWARE ENGINEER</h2>
-
-            <div class="profile-image">
-                <img src="images/webp/dummy-profile.jpg" alt="Full Stack">
+            <div class="w-full sm:w-1/2 md:w-1/2 px-2 mb-6 image-container">
+                <img class="w-full h-auto" src="https://placehold.co/600x360" alt="Placeholder image with interaction effects on hover.">
+                <div class="image-icons">
+                    <a href="https://github.com" class="icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fas fa-eye"></i></a>
+                </div>
+                <a href="#" class="cta-button">View Live</a>
             </div>
+            <!-- <div class="w-full sm:w-1/2 md:w-1/3 px-2 mb-4 image-container">
+                <img class="w-full h-auto" src="https://placehold.co/600x360" alt="Placeholder image with interaction effects on hover.">
+                <div class="image-icons">
+                    <a href="https://github.com" class="icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fas fa-eye"></i></a>
+                </div>
+                <a href="#" class="cta-button">View Live</a>
+            </div> -->
+        </div>
 
-            <p>I'm a full stack software engineer located in the United States.</p>
-
-            <div class="social-icons">
-                <span class="icon"><a href="https://github.com/Scolin022" target=”_blank><img src="images/icon/github.webp" alt="github-icon"></a></span>
-                <span class="icon"><img src="images/icon/mail.svg" alt="code-bracket-icon"></span>
-                <span class="icon"><a href="https://www.linkedin.com/in/samcolin/" target=”_blank><img src="images/icon/linkedin.svg" alt="linkedin-icon"></a></span>
+        <div class="text-center py-8">
+            <p class="body-text">Lets get in touch,</p>
+            <div class="flex justify-center space-x-2 mt-4">
+                <a href="https://twitter.com" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://facebook.com" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://plus.google.com" class="text-red-600 hover:text-red-800"><i class="fab fa-google-plus-g"></i> Google+</a>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="footer-column">
-            <div class="footer-title">Current projects</div>
-            <div class="footer-item"><a href="content/school/wdv321/javascript.html" target=”_blank>JavaScript</a></div>
-            <div class="footer-item"><a href="content/school/wdv341/php.html" target=”_blank>PHP</a></div>
-        </div>
     
-        <div class="footer-column">
-            <div class="footer-title">Jump to</div>
-            <div class="footer-item">Home</div>
-        </div>
-    
-        <div class="footer-column">
-            <div class="footer-title">More about me</div>
-            <div class="footer-item">Personal blog</div>
-        </div>
-    
-        <div class="footer-column">
-            <div class="footer-title">Reach out</div>
-            <div class="footer-item"><a href="https://www.linkedin.com/in/samcolin/">LinkedIn</a></div>
-            <div class="footer-item"><a href="#">Twitter(X)</a></div>
-            <div class="footer-item"><a href="#">Email</a></div>
-        </div>
-    
-        <div class="footer-separator"></div>
-    
-        <div class="footer-quote">"Some cool quote."</div>
-    
-        <div class="footer-credit">Wireframed, designed, prototyped, and hand-coded by ...</div>
-    </div>   
+
+
+
+
+    <footer class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        
+        <span class="ml-3 text-xl">samswebprofile</span>
+      </a>
+      <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+    </div>
+    <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a href="/content/school/wdv495/" target=”_blank class="text-white hover:text-gray-800">Emerging Technologies</a>
+          </li>
+          <li>
+            <a href="" target=”_blank class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a href="" target=”_blank class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a href="" target=”_blank class="text-white hover:text-gray-800">Link</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-800">Link</a>
+          </li>
+        </nav>
+      </div>
 </body>
 </html>
